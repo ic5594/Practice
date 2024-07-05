@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import MealsList from './Mealslist';
 
 export default function Meals() {
   const [mealsData, setMealsData] = useState([]);
@@ -21,9 +22,9 @@ export default function Meals() {
 
   return (
     <ul id="meals">
-      {mealsData.map((x) => {
-        <li key={x.id}> {x.name}</li>;
-      })}
+      {mealsData.map((x) => (
+        <MealsList key={x.id} data={x} />
+      ))}
     </ul>
   );
 }
