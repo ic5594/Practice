@@ -6,6 +6,7 @@ import CartContext from '../store/CartContext.jsx';
 
 export default function MealItem({ meal }) {
   const cartCtx = useContext(CartContext);
+  const envSetting = window.location.href.indexOf('react');
 
   function handleAddMealToCart() {
     cartCtx.addItem(meal);
@@ -14,7 +15,14 @@ export default function MealItem({ meal }) {
   return (
     <li className="meal-item">
       <article>
-        <img src={`http://localhost:3000/${meal.image}`} alt={meal.name} />
+        <img
+          src={
+            envSetting
+              ? `reactpracticesect18.web.app${meal.image}`
+              : `http://localhost:3000/${meal.image}`
+          }
+          alt={meal.name}
+        />
         <div>
           <h3>{meal.name}</h3>
           <p className="meal-item-price">{Formatter.format(meal.price)}</p>

@@ -5,11 +5,17 @@ import Error from './Error.jsx';
 const requestConfig = {};
 
 export default function Meals() {
+  const envSetting = window.location.href.indexOf('react');
+
   const {
     data: loadedMeals,
     isLoading,
     error,
-  } = useHttp('http://localhost:3000/meals', requestConfig, []);
+  } = useHttp(
+    envSetting ? 'reactpracticesect18.web.app' : 'http://localhost:3000/meals',
+    requestConfig,
+    []
+  );
 
   if (isLoading) {
     return <p className="center">Fetching meals...</p>;
