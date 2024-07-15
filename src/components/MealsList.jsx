@@ -18,7 +18,7 @@ export default function MealItem({ meal }) {
         <img
           src={
             envSetting
-              ? `reactpracticesect18.web.app${meal.image}`
+              ? `http://reactpracticesect18.web.app${meal.image}`
               : `http://localhost:3000/${meal.image}`
           }
           alt={meal.name}

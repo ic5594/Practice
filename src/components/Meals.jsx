@@ -12,7 +12,9 @@ export default function Meals() {
     isLoading,
     error,
   } = useHttp(
-    envSetting ? 'reactpracticesect18.web.app' : 'http://localhost:3000/meals',
+    envSetting
+      ? 'http://reactpracticesect18.web.app'
+      : 'http://localhost:3000/meals',
     requestConfig,
     []
   );
