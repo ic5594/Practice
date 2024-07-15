@@ -6,7 +6,7 @@ import CartContext from '../store/CartContext.jsx';
 
 export default function MealItem({ meal }) {
   const cartCtx = useContext(CartContext);
-  const envSetting = window.location.href.indexOf('react');
+  const envSetting = window.location.href.indexOf('react') > -1;
 
   function handleAddMealToCart() {
     cartCtx.addItem(meal);

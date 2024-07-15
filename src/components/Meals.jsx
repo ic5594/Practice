@@ -5,7 +5,7 @@ import Error from './Error.jsx';
 const requestConfig = {};
 
 export default function Meals() {
-  const envSetting = window.location.href.indexOf('react');
+  const envSetting = window.location.href.indexOf('react') > -1;
 
   const {
     data: loadedMeals,
