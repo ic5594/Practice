@@ -5,16 +5,17 @@ import Error from './Error.jsx';
 const requestConfig = {};
 
 export default function Meals() {
-  const envSetting = window.location.href.indexOf('react') > -1;
+  // const envSetting = window.location.href.indexOf('react') > -1;
 
   const {
     data: loadedMeals,
     isLoading,
     error,
   } = useHttp(
-    envSetting
-      ? 'http://reactpracticesect18.web.app'
-      : 'http://localhost:3000/meals',
+    // envSetting
+    //   ? 'http://reactpracticesect18.web.app'
+    // :
+    'http://192.168.0.35:3000/meals',
     requestConfig,
     []
   );

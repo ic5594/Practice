@@ -6,7 +6,7 @@ import CartContext from '../store/CartContext.jsx';
 
 export default function MealItem({ meal }) {
   const cartCtx = useContext(CartContext);
-  const envSetting = window.location.href.indexOf('react') > -1;
+  // const envSetting = window.location.href.indexOf('react') > -1;
 
   function handleAddMealToCart() {
     cartCtx.addItem(meal);
@@ -17,9 +17,10 @@ export default function MealItem({ meal }) {
       <article>
         <img
           src={
-            envSetting
-              ? `http://reactpracticesect18.web.app${meal.image}`
-              : `http://localhost:3000/${meal.image}`
+            // envSetting
+            //   ? `http://reactpracticesect18.web.app${meal.image}`
+            // :
+            `http://192.168.0.35:3000/meals/${meal.image}`
           }
           alt={meal.name}
         />
